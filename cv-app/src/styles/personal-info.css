@@ -1,0 +1,31 @@
+.personal-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  background-color: #fd8d30;
+  color: whitesmoke;
+}
+
+.personal-info-details {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.resume-headings {
+  background-color: #c6f5ff;
+  color: #fd8d30;
+}
+
+.resume-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em;
+}
+
+.resume-detail-containers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(1em, 1fr));
+}

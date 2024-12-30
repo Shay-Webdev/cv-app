@@ -1,0 +1,8 @@
+.input-forms {
+  display: none;
+}
+
+div > form.input-forms-show {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
+}
