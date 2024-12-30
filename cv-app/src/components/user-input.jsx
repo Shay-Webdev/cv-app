@@ -19,16 +19,19 @@ function handleOpenModal(dialogClass) {
 }
 function PersonalDetailsInput() {
   return (
-    <form action='' className='personal-input-form'>
-      <label htmlFor='input-fullname'>Full Name</label>
-      <input type='text' id='input-fullname' />
-      <label htmlFor='input-email'>Email</label>
-      <input type='text' id='input-email' />
-      <label htmlFor='input-phone-number'>Phone Number</label>
-      <input type='text' id='input-phone-number' />
-      <label htmlFor='input-address'>Address</label>
-      <input type='text' id='input-address' />
-    </form>
+    <div className='personal-input-container'>
+      <h1>Personal Info</h1>
+      <form action='' className='personal-input-form'>
+        <label htmlFor='input-fullname'>Full Name</label>
+        <input type='text' id='input-fullname' />
+        <label htmlFor='input-email'>Email</label>
+        <input type='text' id='input-email' />
+        <label htmlFor='input-phone-number'>Phone Number</label>
+        <input type='text' id='input-phone-number' />
+        <label htmlFor='input-address'>Address</label>
+        <input type='text' id='input-address' />
+      </form>
+    </div>
   );
 }
 
@@ -39,11 +42,25 @@ function EducationInput() {
         type='button'
         className='education-input-container-button input-containers-btn'
         onClick={() => {
-          handleOpenModal('.education-input-form');
+          handleCloseModal('.education-input-form');
+          handleOpenModal('.education-list');
         }}
       >
         Education
       </button>
+      <div className='education-list'>
+        <div className='education-1'>Bachelor of Science</div>
+        <button
+          type='button'
+          className='education-add-list-btn'
+          onClick={() => {
+            handleCloseModal('.education-list');
+            handleOpenModal('.education-input-form');
+          }}
+        >
+          +
+        </button>
+      </div>
       <form action='' className='education-input-form input-forms'>
         <label>
           Institute
@@ -75,7 +92,10 @@ function EducationInput() {
           <button
             type='button'
             className='education-cancel-btn input-cancel-btns'
-            onClick={() => handleCloseModal('.education-input-form')}
+            onClick={() => {
+              handleCloseModal('.education-input-form');
+              handleOpenModal('.education-list');
+            }}
           >
             Cancel
           </button>
@@ -91,10 +111,26 @@ function ExperienceInput() {
       <button
         type='button'
         className='experience-input-container-button input-containers-btn'
-        onClick={() => handleOpenModal('.experience-input-form')}
+        onClick={() => {
+          handleCloseModal('.experience-input-form');
+          handleOpenModal('.experience-list');
+        }}
       >
         Experience
       </button>
+      <div className='experience-list'>
+        <div className='experience-1'>Bio-Inovations</div>
+        <button
+          type='button'
+          className='experience-add-list-btn'
+          onClick={() => {
+            handleCloseModal('.experience-list');
+            handleOpenModal('.experience-input-form');
+          }}
+        >
+          +
+        </button>
+      </div>
       <form action='' className='experience-input-form input-forms'>
         <label>
           Company
@@ -126,7 +162,10 @@ function ExperienceInput() {
           <button
             type='button'
             className='experience-cancel-btn input-cancel-btns'
-            onClick={() => handleCloseModal('.experience-input-form')}
+            onClick={() => {
+              handleCloseModal('.experience-input-form');
+              handleOpenModal('.experience-list');
+            }}
           >
             Cancel
           </button>
