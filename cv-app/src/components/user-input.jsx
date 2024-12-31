@@ -3,6 +3,10 @@ import '../styles/user-input.css';
 function UserInputContainer() {
   return (
     <>
+      <div className='input-top'>
+        <button type='button'>Clear</button>
+        <button type='button'>Example</button>
+      </div>
       <PersonalDetailsInput />
       <EducationInput />
       <ExperienceInput />
