@@ -52,11 +52,15 @@ function EducationInput() {
       >
         Education
       </button>
-      <div className='education-list'>
-        <div className='education-1'>Bachelor of Science</div>
+      <div className='education-list input-lists'>
+        <ul>
+          <li>
+            <div className='education-1'>Bachelor of Science</div>
+          </li>
+        </ul>
         <button
           type='button'
-          className='education-add-list-btn'
+          className='education-add-list-btn input-add-list-btn'
           onClick={() => {
             handleCloseModal('.education-list');
             handleOpenModal('.education-input-form');
@@ -65,6 +69,7 @@ function EducationInput() {
           +
         </button>
       </div>
+
       <form action='' className='education-input-form input-forms'>
         <label>
           Institute
@@ -122,11 +127,15 @@ function ExperienceInput() {
       >
         Experience
       </button>
-      <div className='experience-list'>
-        <div className='experience-1'>Bio-Inovations</div>
+      <div className='experience-list input-lists'>
+        <ul>
+          <li>
+            <div className='experience-1'>Bio-Inovations</div>
+          </li>
+        </ul>
         <button
           type='button'
-          className='experience-add-list-btn'
+          className='experience-add-list-btn input-add-list-btn'
           onClick={() => {
             handleCloseModal('.experience-list');
             handleOpenModal('.experience-input-form');
@@ -135,6 +144,7 @@ function ExperienceInput() {
           +
         </button>
       </div>
+
       <form action='' className='experience-input-form input-forms'>
         <label>
           Company

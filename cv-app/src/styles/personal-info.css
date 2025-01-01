@@ -14,7 +14,7 @@
 }
 
 .resume-headings {
-  background-color: #c6f5ff;
+  background-color: gainsboro;
   color: #fd8d30;
 }
 
@@ -28,4 +28,8 @@
 .resume-detail-containers {
   display: grid;
   grid-template-columns: repeat(2, minmax(1em, 1fr));
+}
+
+.resume-container {
+  background-color: whitesmoke;
 }
