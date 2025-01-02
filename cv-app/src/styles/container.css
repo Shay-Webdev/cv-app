@@ -1,3 +1,9 @@
 .resume-container {
   min-width: 1000px;
 }
+
+.user-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}

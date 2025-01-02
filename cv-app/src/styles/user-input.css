@@ -3,6 +3,10 @@ ul {
   padding: 0;
 }
 
+label {
+  text-align: left;
+}
+
 input {
   padding: 0.5em;
   border-radius: 4px;
@@ -13,6 +17,7 @@ input {
 
 .input-forms {
   display: none;
+  gap: 1em;
 }
 
 div > form.input-forms-show {
@@ -30,7 +35,8 @@ div > form.input-forms-show {
   border-radius: 4px;
 }
 
-.input-top > :first-child {
+.input-top > :first-child,
+.input-delete-btns {
   background-color: #ff0800;
   color: whitesmoke;
 }
@@ -88,4 +94,17 @@ div > form.input-forms-show {
     rgba(0, 0, 0, 0.15) 0 1px 2px, rgba(0, 0, 0, 0.15) 0 2px 4px,
     rgba(0, 0, 0, 0.15) 0 4px 8px, rgba(0, 0, 0, 0.15) 0 8px 16px,
     rgba(0, 0, 0, 0.15) 0 16px 32px;
+}
+
+.from-btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.input-add-btns {
+  background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #ffffff;
 }
