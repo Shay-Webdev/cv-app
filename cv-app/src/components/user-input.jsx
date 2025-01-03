@@ -9,6 +9,8 @@ function UserInputContainer({
   educationInput,
   experienceInput,
   handleExample,
+  handleEducationDelete,
+  handleExperienceDelete,
 }) {
   return (
     <>
@@ -27,10 +29,12 @@ function UserInputContainer({
       <EducationInput
         handleEducationInput={handleEducationInput}
         educationInput={educationInput}
+        handleEducationDelete={handleEducationDelete}
       />
       <ExperienceInput
         handleExperienceInput={handleExperienceInput}
         experienceInput={experienceInput}
+        handleExperienceDelete={handleExperienceDelete}
       />
     </>
   );
@@ -85,7 +89,11 @@ function PersonalDetailsInput({ handlePersonalInfoInput, personalInfoInput }) {
   );
 }
 
-function EducationInput({ handleEducationInput, educationInput }) {
+function EducationInput({
+  handleEducationInput,
+  educationInput,
+  handleEducationDelete,
+}) {
   return (
     <div className='education-input-container input-containers'>
       <button
@@ -166,6 +174,7 @@ function EducationInput({ handleEducationInput, educationInput }) {
           <button
             type='button'
             className='education-delete-btn input-delete-btns'
+            onClick={() => handleEducationDelete()}
           >
             Delete
           </button>
@@ -185,7 +194,11 @@ function EducationInput({ handleEducationInput, educationInput }) {
     </div>
   );
 }
-function ExperienceInput({ handleExperienceInput, experienceInput }) {
+function ExperienceInput({
+  handleExperienceInput,
+  experienceInput,
+  handleExperienceDelete,
+}) {
   return (
     <div className='experience-input-container input-containers'>
       <button
@@ -266,6 +279,7 @@ function ExperienceInput({ handleExperienceInput, experienceInput }) {
           <button
             type='button'
             className='experience-delete-btn input-delete-btns'
+            onClick={() => handleExperienceDelete()}
           >
             Delete
           </button>

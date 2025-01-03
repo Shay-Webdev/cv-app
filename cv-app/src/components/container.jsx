@@ -12,6 +12,8 @@ function UserInput({
   educationInput,
   experienceInput,
   handleExample,
+  handleEducationDelete,
+  handleExperienceDelete,
 }) {
   return (
     <section className='user-input-container'>
@@ -24,6 +26,8 @@ function UserInput({
         educationInput={educationInput}
         experienceInput={experienceInput}
         handleExample={handleExample}
+        handleEducationDelete={handleEducationDelete}
+        handleExperienceDelete={handleExperienceDelete}
       ></UserInputContainer>
     </section>
   );
@@ -125,6 +129,24 @@ function PageContainer() {
       experienceLocation: 'City, State',
     });
   }
+  function handleEducationDelete() {
+    setEducationInput({
+      school: '',
+      degree: '',
+      educationStartDate: '',
+      educationEndDate: '',
+      educationLocation: '',
+    });
+  }
+  function handleExperienceDelete() {
+    setExperienceInput({
+      company: '',
+      job: '',
+      experienceStartDate: '',
+      experienceEndDate: '',
+      experienceLocation: '',
+    });
+  }
   return (
     <div className='page-container'>
       <UserInput
@@ -136,6 +158,8 @@ function PageContainer() {
         educationInput={educationInput}
         experienceInput={experienceInput}
         handleExample={handleExample}
+        handleEducationDelete={handleEducationDelete}
+        handleExperienceDelete={handleExperienceDelete}
       ></UserInput>
       <Resume
         personalInfoInput={personalInfoInput}
