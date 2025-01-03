@@ -3,20 +3,30 @@ import '../styles/container.css';
 import PersonalInfo from './personal-info.jsx';
 import UserInputContainer from './user-input.jsx';
 
-function UserInput({ handlePersonalInfoInput }) {
+function UserInput({
+  handlePersonalInfoInput,
+  handleEducationInput,
+  handleExperienceInput,
+}) {
   return (
     <section className='user-input-container'>
       <UserInputContainer
         handlePersonalInfoInput={handlePersonalInfoInput}
+        handleEducationInput={handleEducationInput}
+        handleExperienceInput={handleExperienceInput}
       ></UserInputContainer>
     </section>
   );
 }
 
-function Resume({ personalInfoInput }) {
+function Resume({ personalInfoInput, educationInput, experienceInput }) {
   return (
     <section className='resume-container'>
-      <PersonalInfo personalInfoInput={personalInfoInput}></PersonalInfo>
+      <PersonalInfo
+        personalInfoInput={personalInfoInput}
+        educationInput={educationInput}
+        experienceInput={experienceInput}
+      ></PersonalInfo>
     </section>
   );
 }
@@ -31,17 +41,17 @@ function PageContainer() {
   const [educationInput, setEducationInput] = useState({
     school: '',
     degree: '',
-    startDate: '',
-    endDate: '',
-    location: '',
+    educationStartDate: '',
+    educationEndDate: '',
+    educationLocation: '',
   });
 
   const [experienceInput, setExperienceInput] = useState({
     company: '',
     position: '',
-    startDate: '',
-    endDate: '',
-    location: '',
+    experienceStartDate: '',
+    experienceEndDate: '',
+    experienceLocation: '',
   });
   function handlePersonalInfoInput(e) {
     const { name, value } = e.target;
@@ -49,10 +59,30 @@ function PageContainer() {
     setPersonalInfoInput(updatedPersonalInfoInput);
     console.log(personalInfoInput);
   }
+  function handleEducationInput(e) {
+    const { name, value } = e.target;
+    const updatedEducationInput = { ...educationInput, [name]: value };
+    setEducationInput(updatedEducationInput);
+    console.log(educationInput);
+  }
+  function handleExperienceInput(e) {
+    const { name, value } = e.target;
+    const updatedExperienceInput = { ...experienceInput, [name]: value };
+    setExperienceInput(updatedExperienceInput);
+    console.log(experienceInput);
+  }
   return (
     <div className='page-container'>
-      <UserInput handlePersonalInfoInput={handlePersonalInfoInput}></UserInput>
-      <Resume personalInfoInput={personalInfoInput}></Resume>
+      <UserInput
+        handlePersonalInfoInput={handlePersonalInfoInput}
+        handleEducationInput={handleEducationInput}
+        handleExperienceInput={handleExperienceInput}
+      ></UserInput>
+      <Resume
+        personalInfoInput={personalInfoInput}
+        educationInput={educationInput}
+        experienceInput={experienceInput}
+      ></Resume>
     </div>
   );
 }

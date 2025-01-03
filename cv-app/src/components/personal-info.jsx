@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles/personal-info.css';
 
 function PersonalInfo(props) {
-  console.log(props.personalInfoInput.fullName);
+  console.log(props.personalInfoInput.degree);
 
   return (
     <>
@@ -14,16 +14,18 @@ function PersonalInfo(props) {
           address={props.personalInfoInput.address}
         ></ResumeHeader>
         <ResumeEducation
-          degree='Bachelor in Science'
-          institute='University of Something'
-          duration='2020 - 2024'
-          city='Some City'
+          degree={props.educationInput.degree}
+          institute={props.educationInput.school}
+          startDate={props.educationInput.educationStartDate}
+          endDate={props.educationInput.educationEndDate}
+          city={props.educationInput.educationLocation}
         ></ResumeEducation>
         <ResumeExperience
-          job='Full Stack Developer'
-          company='Some Company'
-          duration='2024 - now'
-          city='Some City'
+          job={props.experienceInput.job}
+          company={props.experienceInput.company}
+          startDate={props.experienceInput.experienceStartDate}
+          endDate={props.experienceInput.experienceEndDate}
+          city={props.experienceInput.experienceLocation}
         ></ResumeExperience>
         <ResumeSkills
           skill1='HTML'
@@ -49,7 +51,7 @@ function ResumeHeader({ name, email, phoneNumber, address }) {
   );
 }
 
-function ResumeEducation({ degree, institute, duration, city }) {
+function ResumeEducation({ degree, institute, startDate, endDate, city }) {
   return (
     <section className='resume-education-section resume-sections'>
       <div className='education-heading resume-headings'>
@@ -57,7 +59,7 @@ function ResumeEducation({ degree, institute, duration, city }) {
       </div>
       <div className='education-details-container resume-detail-containers'>
         <h3 className='resume-degree'>{degree}</h3>
-        <p className='resume-education-duration'>{duration}</p>
+        <p className='resume-education-duration'>{`${startDate} - ${endDate}`}</p>
         <h4 className='resume-institute'>{institute}</h4>
         <p className='resume-education-city'>{city}</p>
       </div>
@@ -65,7 +67,7 @@ function ResumeEducation({ degree, institute, duration, city }) {
   );
 }
 
-function ResumeExperience({ job, duration, company, city }) {
+function ResumeExperience({ job, startDate, endDate, company, city }) {
   return (
     <section className='resume-experience-section resume-sections'>
       <div className='experience-heading resume-headings'>
@@ -73,7 +75,7 @@ function ResumeExperience({ job, duration, company, city }) {
       </div>
       <div className='experience-details-container resume-detail-containers'>
         <h3 className='resume-job'>{job}</h3>
-        <p className='resume-experience-duration'>{duration}</p>
+        <p className='resume-experience-duration'>{`${startDate} - ${endDate}`}</p>
         <h4 className='resume-company'>{company}</h4>
         <p className='resume-experience-city'>{city}</p>
       </div>

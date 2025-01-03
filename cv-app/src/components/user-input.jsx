@@ -1,6 +1,10 @@
 import '../styles/user-input.css';
 
-function UserInputContainer({ handlePersonalInfoInput }) {
+function UserInputContainer({
+  handlePersonalInfoInput,
+  handleEducationInput,
+  handleExperienceInput,
+}) {
   return (
     <>
       <div className='input-top'>
@@ -8,8 +12,8 @@ function UserInputContainer({ handlePersonalInfoInput }) {
         <button type='button'>Example</button>
       </div>
       <PersonalDetailsInput handlePersonalInfoInput={handlePersonalInfoInput} />
-      <EducationInput />
-      <ExperienceInput />
+      <EducationInput handleEducationInput={handleEducationInput} />
+      <ExperienceInput handleExperienceInput={handleExperienceInput} />
     </>
   );
 }
@@ -59,7 +63,7 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
   );
 }
 
-function EducationInput() {
+function EducationInput({ handleEducationInput }) {
   return (
     <div className='education-input-container input-containers'>
       <button
@@ -93,23 +97,43 @@ function EducationInput() {
       <form action='' className='education-input-form input-forms'>
         <label>
           School
-          <input type='text' name='school' />
+          <input
+            type='text'
+            name='school'
+            onChange={(e) => handleEducationInput(e)}
+          />
         </label>
         <label>
           Degree
-          <input type='text' name='degree' />
+          <input
+            type='text'
+            name='degree'
+            onChange={(e) => handleEducationInput(e)}
+          />
         </label>
         <label>
           Start Year
-          <input type='text' name='educationStartDate' />
+          <input
+            type='text'
+            name='educationStartDate'
+            onChange={(e) => handleEducationInput(e)}
+          />
         </label>
         <label>
           End Year
-          <input type='text' name='educationEndDate' />
+          <input
+            type='text'
+            name='educationEndDate'
+            onChange={(e) => handleEducationInput(e)}
+          />
         </label>
         <label>
           Location
-          <input type='text' name='educationLocation' />
+          <input
+            type='text'
+            name='educationLocation'
+            onChange={(e) => handleEducationInput(e)}
+          />
         </label>
         <div className='education-form-btns from-btns'>
           <button
@@ -134,7 +158,7 @@ function EducationInput() {
     </div>
   );
 }
-function ExperienceInput() {
+function ExperienceInput({ handleExperienceInput }) {
   return (
     <div className='experience-input-container input-containers'>
       <button
@@ -168,23 +192,43 @@ function ExperienceInput() {
       <form action='' className='experience-input-form input-forms'>
         <label>
           Company
-          <input type='text' name='company' />
+          <input
+            type='text'
+            name='company'
+            onChange={(e) => handleExperienceInput(e)}
+          />
         </label>
         <label>
           Job
-          <input type='text' name='job' />
+          <input
+            type='text'
+            name='job'
+            onChange={(e) => handleExperienceInput(e)}
+          />
         </label>
         <label>
           Start Year
-          <input type='text' name='experienceStartDate' />
+          <input
+            type='text'
+            name='experienceStartDate'
+            onChange={(e) => handleExperienceInput(e)}
+          />
         </label>
         <label>
           End Year
-          <input type='text' name='experienceEndDate' />
+          <input
+            type='text'
+            name='experienceEndDate'
+            onChange={(e) => handleExperienceInput(e)}
+          />
         </label>
         <label>
           Location
-          <input type='text' name='experienceLocation' />
+          <input
+            type='text'
+            name='experienceLocation'
+            onChange={(e) => handleExperienceInput(e)}
+          />
         </label>
         <div className='experience-form-btns from-btns'>
           <button
