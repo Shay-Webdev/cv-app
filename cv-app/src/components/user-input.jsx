@@ -34,11 +34,26 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
           onChange={(e) => handlePersonalInfoInput(e)}
         />
         <label htmlFor='input-email'>Email</label>
-        <input type='text' id='input-email' name='email' />
+        <input
+          type='text'
+          id='input-email'
+          name='email'
+          onChange={(e) => handlePersonalInfoInput(e)}
+        />
         <label htmlFor='input-phone-number'>Phone Number</label>
-        <input type='text' id='input-phone-number' name='phone' />
+        <input
+          type='text'
+          id='input-phone-number'
+          name='phone'
+          onChange={(e) => handlePersonalInfoInput(e)}
+        />
         <label htmlFor='input-address'>Address</label>
-        <input type='text' id='input-address' name='address' />
+        <input
+          type='text'
+          id='input-address'
+          name='address'
+          onChange={(e) => handlePersonalInfoInput(e)}
+        />
       </form>
     </div>
   );

@@ -9,9 +9,9 @@ function PersonalInfo(props) {
       <div className='resume-container'>
         <ResumeHeader
           name={props.personalInfoInput.fullName}
-          email='shay.developer@gmail.com'
-          phoneNumber='9025977880'
-          address='Midgard'
+          email={props.personalInfoInput.email}
+          phoneNumber={props.personalInfoInput.phone}
+          address={props.personalInfoInput.address}
         ></ResumeHeader>
         <ResumeEducation
           degree='Bachelor in Science'

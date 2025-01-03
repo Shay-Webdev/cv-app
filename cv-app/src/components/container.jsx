@@ -45,7 +45,7 @@ function PageContainer() {
   });
   function handlePersonalInfoInput(e) {
     const { name, value } = e.target;
-    const updatedPersonalInfoInput = { ...personalInfoInput, fullName: value };
+    const updatedPersonalInfoInput = { ...personalInfoInput, [name]: value };
     setPersonalInfoInput(updatedPersonalInfoInput);
     console.log(personalInfoInput);
   }
