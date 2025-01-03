@@ -7,3 +7,10 @@
   flex-direction: column;
   gap: 0.5em;
 }
+
+.page-container {
+  display: flex;
+  gap: 0.5em;
+  min-width: 100%;
+  min-height: 100%;
+}

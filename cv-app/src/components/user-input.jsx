@@ -1,13 +1,13 @@
 import '../styles/user-input.css';
 
-function UserInputContainer() {
+function UserInputContainer({ handlePersonalInfoInput }) {
   return (
     <>
       <div className='input-top'>
         <button type='button'>Clear</button>
         <button type='button'>Example</button>
       </div>
-      <PersonalDetailsInput />
+      <PersonalDetailsInput handlePersonalInfoInput={handlePersonalInfoInput} />
       <EducationInput />
       <ExperienceInput />
     </>
@@ -21,19 +21,24 @@ function handleOpenModal(dialogClass) {
   const modal = document.querySelector(dialogClass);
   modal.style.display = modal.style.display === 'none' ? 'grid' : 'none';
 }
-function PersonalDetailsInput() {
+function PersonalDetailsInput({ handlePersonalInfoInput }) {
   return (
     <div className='personal-input-container'>
       <h1>Personal Info</h1>
       <form action='' className='personal-input-form'>
         <label htmlFor='input-fullname'>Full Name</label>
-        <input type='text' id='input-fullname' />
+        <input
+          type='text'
+          id='input-fullname'
+          name='fullName'
+          onChange={(e) => handlePersonalInfoInput(e)}
+        />
         <label htmlFor='input-email'>Email</label>
-        <input type='text' id='input-email' />
+        <input type='text' id='input-email' name='email' />
         <label htmlFor='input-phone-number'>Phone Number</label>
-        <input type='text' id='input-phone-number' />
+        <input type='text' id='input-phone-number' name='phone' />
         <label htmlFor='input-address'>Address</label>
-        <input type='text' id='input-address' />
+        <input type='text' id='input-address' name='address' />
       </form>
     </div>
   );
@@ -72,24 +77,24 @@ function EducationInput() {
 
       <form action='' className='education-input-form input-forms'>
         <label>
-          Institute
-          <input type='text' />
+          School
+          <input type='text' name='school' />
         </label>
         <label>
           Degree
-          <input type='text' />
+          <input type='text' name='degree' />
         </label>
         <label>
           Start Year
-          <input type='text' />
+          <input type='text' name='educationStartDate' />
         </label>
         <label>
           End Year
-          <input type='text' />
+          <input type='text' name='educationEndDate' />
         </label>
         <label>
           Location
-          <input type='text' />
+          <input type='text' name='educationLocation' />
         </label>
         <div className='education-form-btns from-btns'>
           <button
@@ -148,23 +153,23 @@ function ExperienceInput() {
       <form action='' className='experience-input-form input-forms'>
         <label>
           Company
-          <input type='text' />
+          <input type='text' name='company' />
         </label>
         <label>
           Job
-          <input type='text' />
+          <input type='text' name='job' />
         </label>
         <label>
           Start Year
-          <input type='text' />
+          <input type='text' name='experienceStartDate' />
         </label>
         <label>
           End Year
-          <input type='text' />
+          <input type='text' name='experienceEndDate' />
         </label>
         <label>
           Location
-          <input type='text' />
+          <input type='text' name='experienceLocation' />
         </label>
         <div className='experience-form-btns from-btns'>
           <button
