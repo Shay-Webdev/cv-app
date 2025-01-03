@@ -8,6 +8,7 @@ function UserInputContainer({
   personalInfoInput,
   educationInput,
   experienceInput,
+  handleExample,
 }) {
   return (
     <>
@@ -15,7 +16,9 @@ function UserInputContainer({
         <button type='button' onClick={() => handleClear()}>
           Clear
         </button>
-        <button type='button'>Example</button>
+        <button type='button' onClick={() => handleExample()}>
+          Example
+        </button>
       </div>
       <PersonalDetailsInput
         handlePersonalInfoInput={handlePersonalInfoInput}

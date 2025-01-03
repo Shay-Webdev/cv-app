@@ -11,6 +11,7 @@ function UserInput({
   personalInfoInput,
   educationInput,
   experienceInput,
+  handleExample,
 }) {
   return (
     <section className='user-input-container'>
@@ -22,6 +23,7 @@ function UserInput({
         personalInfoInput={personalInfoInput}
         educationInput={educationInput}
         experienceInput={experienceInput}
+        handleExample={handleExample}
       ></UserInputContainer>
     </section>
   );
@@ -56,7 +58,7 @@ function PageContainer() {
 
   const [experienceInput, setExperienceInput] = useState({
     company: '',
-    position: '',
+    job: '',
     experienceStartDate: '',
     experienceEndDate: '',
     experienceLocation: '',
@@ -95,10 +97,32 @@ function PageContainer() {
     });
     setExperienceInput({
       company: '',
-      position: '',
+      job: '',
       experienceStartDate: '',
       experienceEndDate: '',
       experienceLocation: '',
+    });
+  }
+  function handleExample() {
+    setPersonalInfoInput({
+      fullName: 'Shay',
+      email: 'shay.developer@gmail.com',
+      phone: '9025988770',
+      address: 'Midgard',
+    });
+    setEducationInput({
+      school: 'Example University',
+      degree: 'Bachelor of Science',
+      educationStartDate: '2017',
+      educationEndDate: '2020',
+      educationLocation: 'City, State',
+    });
+    setExperienceInput({
+      company: 'Freelancing',
+      job: 'Software Developer',
+      experienceStartDate: '2024',
+      experienceEndDate: 'Present',
+      experienceLocation: 'City, State',
     });
   }
   return (
@@ -111,6 +135,7 @@ function PageContainer() {
         personalInfoInput={personalInfoInput}
         educationInput={educationInput}
         experienceInput={experienceInput}
+        handleExample={handleExample}
       ></UserInput>
       <Resume
         personalInfoInput={personalInfoInput}
