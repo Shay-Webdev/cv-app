@@ -7,6 +7,10 @@ function UserInput({
   handlePersonalInfoInput,
   handleEducationInput,
   handleExperienceInput,
+  handleClear,
+  personalInfoInput,
+  educationInput,
+  experienceInput,
 }) {
   return (
     <section className='user-input-container'>
@@ -14,6 +18,10 @@ function UserInput({
         handlePersonalInfoInput={handlePersonalInfoInput}
         handleEducationInput={handleEducationInput}
         handleExperienceInput={handleExperienceInput}
+        handleClear={handleClear}
+        personalInfoInput={personalInfoInput}
+        educationInput={educationInput}
+        experienceInput={experienceInput}
       ></UserInputContainer>
     </section>
   );
@@ -71,12 +79,38 @@ function PageContainer() {
     setExperienceInput(updatedExperienceInput);
     console.log(experienceInput);
   }
+  function handleClear() {
+    setPersonalInfoInput({
+      fullName: '',
+      email: '',
+      phone: '',
+      address: '',
+    });
+    setEducationInput({
+      school: '',
+      degree: '',
+      educationStartDate: '',
+      educationEndDate: '',
+      educationLocation: '',
+    });
+    setExperienceInput({
+      company: '',
+      position: '',
+      experienceStartDate: '',
+      experienceEndDate: '',
+      experienceLocation: '',
+    });
+  }
   return (
     <div className='page-container'>
       <UserInput
         handlePersonalInfoInput={handlePersonalInfoInput}
         handleEducationInput={handleEducationInput}
         handleExperienceInput={handleExperienceInput}
+        handleClear={handleClear}
+        personalInfoInput={personalInfoInput}
+        educationInput={educationInput}
+        experienceInput={experienceInput}
       ></UserInput>
       <Resume
         personalInfoInput={personalInfoInput}

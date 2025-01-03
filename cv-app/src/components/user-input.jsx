@@ -4,16 +4,31 @@ function UserInputContainer({
   handlePersonalInfoInput,
   handleEducationInput,
   handleExperienceInput,
+  handleClear = () => console.log('Clear button clicked'),
+  personalInfoInput,
+  educationInput,
+  experienceInput,
 }) {
   return (
     <>
       <div className='input-top'>
-        <button type='button'>Clear</button>
+        <button type='button' onClick={() => handleClear()}>
+          Clear
+        </button>
         <button type='button'>Example</button>
       </div>
-      <PersonalDetailsInput handlePersonalInfoInput={handlePersonalInfoInput} />
-      <EducationInput handleEducationInput={handleEducationInput} />
-      <ExperienceInput handleExperienceInput={handleExperienceInput} />
+      <PersonalDetailsInput
+        handlePersonalInfoInput={handlePersonalInfoInput}
+        personalInfoInput={personalInfoInput}
+      />
+      <EducationInput
+        handleEducationInput={handleEducationInput}
+        educationInput={educationInput}
+      />
+      <ExperienceInput
+        handleExperienceInput={handleExperienceInput}
+        experienceInput={experienceInput}
+      />
     </>
   );
 }
@@ -25,7 +40,7 @@ function handleOpenModal(dialogClass) {
   const modal = document.querySelector(dialogClass);
   modal.style.display = modal.style.display === 'none' ? 'grid' : 'none';
 }
-function PersonalDetailsInput({ handlePersonalInfoInput }) {
+function PersonalDetailsInput({ handlePersonalInfoInput, personalInfoInput }) {
   return (
     <div className='personal-input-container'>
       <h1>Personal Info</h1>
@@ -35,6 +50,7 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
           type='text'
           id='input-fullname'
           name='fullName'
+          value={personalInfoInput.fullName}
           onChange={(e) => handlePersonalInfoInput(e)}
         />
         <label htmlFor='input-email'>Email</label>
@@ -42,6 +58,7 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
           type='text'
           id='input-email'
           name='email'
+          value={personalInfoInput.email}
           onChange={(e) => handlePersonalInfoInput(e)}
         />
         <label htmlFor='input-phone-number'>Phone Number</label>
@@ -49,6 +66,7 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
           type='text'
           id='input-phone-number'
           name='phone'
+          value={personalInfoInput.phone}
           onChange={(e) => handlePersonalInfoInput(e)}
         />
         <label htmlFor='input-address'>Address</label>
@@ -56,6 +74,7 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
           type='text'
           id='input-address'
           name='address'
+          value={personalInfoInput.address}
           onChange={(e) => handlePersonalInfoInput(e)}
         />
       </form>
@@ -63,7 +82,7 @@ function PersonalDetailsInput({ handlePersonalInfoInput }) {
   );
 }
 
-function EducationInput({ handleEducationInput }) {
+function EducationInput({ handleEducationInput, educationInput }) {
   return (
     <div className='education-input-container input-containers'>
       <button
@@ -100,6 +119,7 @@ function EducationInput({ handleEducationInput }) {
           <input
             type='text'
             name='school'
+            value={educationInput.school}
             onChange={(e) => handleEducationInput(e)}
           />
         </label>
@@ -108,6 +128,7 @@ function EducationInput({ handleEducationInput }) {
           <input
             type='text'
             name='degree'
+            value={educationInput.degree}
             onChange={(e) => handleEducationInput(e)}
           />
         </label>
@@ -116,6 +137,7 @@ function EducationInput({ handleEducationInput }) {
           <input
             type='text'
             name='educationStartDate'
+            value={educationInput.educationStartDate}
             onChange={(e) => handleEducationInput(e)}
           />
         </label>
@@ -124,6 +146,7 @@ function EducationInput({ handleEducationInput }) {
           <input
             type='text'
             name='educationEndDate'
+            value={educationInput.educationEndDate}
             onChange={(e) => handleEducationInput(e)}
           />
         </label>
@@ -132,6 +155,7 @@ function EducationInput({ handleEducationInput }) {
           <input
             type='text'
             name='educationLocation'
+            value={educationInput.educationLocation}
             onChange={(e) => handleEducationInput(e)}
           />
         </label>
@@ -158,7 +182,7 @@ function EducationInput({ handleEducationInput }) {
     </div>
   );
 }
-function ExperienceInput({ handleExperienceInput }) {
+function ExperienceInput({ handleExperienceInput, experienceInput }) {
   return (
     <div className='experience-input-container input-containers'>
       <button
@@ -195,6 +219,7 @@ function ExperienceInput({ handleExperienceInput }) {
           <input
             type='text'
             name='company'
+            value={experienceInput.company}
             onChange={(e) => handleExperienceInput(e)}
           />
         </label>
@@ -203,6 +228,7 @@ function ExperienceInput({ handleExperienceInput }) {
           <input
             type='text'
             name='job'
+            value={experienceInput.job}
             onChange={(e) => handleExperienceInput(e)}
           />
         </label>
@@ -211,6 +237,7 @@ function ExperienceInput({ handleExperienceInput }) {
           <input
             type='text'
             name='experienceStartDate'
+            value={experienceInput.experienceStartDate}
             onChange={(e) => handleExperienceInput(e)}
           />
         </label>
@@ -219,6 +246,7 @@ function ExperienceInput({ handleExperienceInput }) {
           <input
             type='text'
             name='experienceEndDate'
+            value={experienceInput.experienceEndDate}
             onChange={(e) => handleExperienceInput(e)}
           />
         </label>
@@ -227,6 +255,7 @@ function ExperienceInput({ handleExperienceInput }) {
           <input
             type='text'
             name='experienceLocation'
+            value={experienceInput.experienceLocation}
             onChange={(e) => handleExperienceInput(e)}
           />
         </label>
