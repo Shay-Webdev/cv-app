@@ -13,10 +13,10 @@ function UserInput({ handlePersonalInfoInput }) {
   );
 }
 
-function Resume() {
+function Resume({ personalInfoInput }) {
   return (
     <section className='resume-container'>
-      <PersonalInfo></PersonalInfo>
+      <PersonalInfo personalInfoInput={personalInfoInput}></PersonalInfo>
     </section>
   );
 }
@@ -45,13 +45,14 @@ function PageContainer() {
   });
   function handlePersonalInfoInput(e) {
     const { name, value } = e.target;
-    setPersonalInfoInput({ ...personalInfoInput, [name]: value });
+    const updatedPersonalInfoInput = { ...personalInfoInput, fullName: value };
+    setPersonalInfoInput(updatedPersonalInfoInput);
     console.log(personalInfoInput);
   }
   return (
     <div className='page-container'>
       <UserInput handlePersonalInfoInput={handlePersonalInfoInput}></UserInput>
-      <Resume></Resume>
+      <Resume personalInfoInput={personalInfoInput}></Resume>
     </div>
   );
 }

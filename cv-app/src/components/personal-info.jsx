@@ -1,28 +1,14 @@
 import { useState } from 'react';
 import '../styles/personal-info.css';
 
-function PersonalInfo() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-
-  function handleNameChange(e) {
-    setName(e.target.value);
-  }
-
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
-  }
-
-  function handlePhoneNumberChange(e) {
-    setPhoneNumber(e.target.value);
-  }
+function PersonalInfo(props) {
+  console.log(props.personalInfoInput.fullName);
 
   return (
     <>
       <div className='resume-container'>
         <ResumeHeader
-          name='Shay'
+          name={props.personalInfoInput.fullName}
           email='shay.developer@gmail.com'
           phoneNumber='9025977880'
           address='Midgard'
