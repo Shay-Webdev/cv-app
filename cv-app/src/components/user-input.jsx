@@ -65,6 +65,69 @@ function createInputList(listClassName, itemClassName, listItemName) {
   listItem.textContent = listItemName;
   listItem.addEventListener('click', () => {
     handleOpenModal('.education-input-form');
+    function handleInputEdit(inputType) {
+      if (inputType === '.education-input') {
+        // Update the education input fields
+        setEducationInput({
+          school: educationInput.school,
+          degree: educationInput.degree,
+          educationStartDate: educationInput.educationStartDate,
+          educationEndDate: educationInput.educationEndDate,
+          educationLocation: educationInput.educationLocation,
+        });
+
+        // Find the corresponding resume education item and update it
+        const educationList = document.querySelector('.resume-education-list');
+        const educationItems = educationList.querySelectorAll(
+          '.resume-education-items'
+        );
+
+        educationItems.forEach((item) => {
+          const degree = item.querySelector('.resume-degree');
+          const duration = item.querySelector('.resume-education-duration');
+          const institute = item.querySelector('.resume-institute');
+          const city = item.querySelector('.resume-education-city');
+
+          if (degree.textContent === educationInput.degree) {
+            degree.textContent = educationInput.degree;
+            duration.textContent = `${educationInput.educationStartDate} - ${educationInput.educationEndDate}`;
+            institute.textContent = educationInput.school;
+            city.textContent = educationInput.educationLocation;
+          }
+        });
+      } else if (inputType === '.experience-input') {
+        // Update the experience input fields
+        setExperienceInput({
+          company: experienceInput.company,
+          job: experienceInput.job,
+          experienceStartDate: experienceInput.experienceStartDate,
+          experienceEndDate: experienceInput.experienceEndDate,
+          experienceLocation: experienceInput.experienceLocation,
+        });
+
+        // Find the corresponding resume experience item and update it
+        const experienceList = document.querySelector(
+          '.resume-experience-list'
+        );
+        const experienceItems = experienceList.querySelectorAll(
+          '.resume-experience-items'
+        );
+
+        experienceItems.forEach((item) => {
+          const job = item.querySelector('.resume-job');
+          const duration = item.querySelector('.resume-experience-duration');
+          const company = item.querySelector('.resume-company');
+          const city = item.querySelector('.resume-experience-city');
+
+          if (job.textContent === experienceInput.job) {
+            job.textContent = experienceInput.job;
+            duration.textContent = `${experienceInput.experienceStartDate} - ${experienceInput.experienceEndDate}`;
+            company.textContent = experienceInput.company;
+            city.textContent = experienceInput.experienceLocation;
+          }
+        });
+      }
+    }
     handleCloseModal('.education-list ');
     handleInputEdit('.education-input');
   });

@@ -27,12 +27,12 @@ function PersonalInfo(props) {
           endDate={props.experienceInput.experienceEndDate}
           city={props.experienceInput.experienceLocation}
         ></ResumeExperience>
-        <ResumeSkills
+        {/* <ResumeSkills
           skill1='HTML'
           skill2='CSS'
           skill3='JavaScript'
           skill4='React'
-        ></ResumeSkills>
+        ></ResumeSkills> */}
       </div>
     </>
   );
@@ -90,20 +90,20 @@ function ResumeExperience({ job, startDate, endDate, company, city }) {
     </section>
   );
 }
-function ResumeSkills({ skill1, skill2, skill3, skill4 }) {
-  return (
-    <section className='resume-skills-section resume-sections'>
-      <div className='skills-heading resume-headings'>
-        <h2>Skills</h2>
-      </div>
-      <div className='skills-details-container resume-detail-containers'>
-        <h4 className='resume-skill-1'>{skill1}</h4>
-        <h4 className='resume-skill-2'>{skill2}</h4>
-        <h4 className='resume-skill-3'>{skill3}</h4>
-        <h4 className='resume-skill-4'>{skill4}</h4>
-      </div>
-    </section>
-  );
-}
+// function ResumeSkills({ skill1, skill2, skill3, skill4 }) {
+//   return (
+//     <section className='resume-skills-section resume-sections'>
+//       <div className='skills-heading resume-headings'>
+//         <h2>Skills</h2>
+//       </div>
+//       <div className='skills-details-container resume-detail-containers'>
+//         <h4 className='resume-skill-1'>{skill1}</h4>
+//         <h4 className='resume-skill-2'>{skill2}</h4>
+//         <h4 className='resume-skill-3'>{skill3}</h4>
+//         <h4 className='resume-skill-4'>{skill4}</h4>
+//       </div>
+//     </section>
+//   );
+// }
 
 export default PersonalInfo;
