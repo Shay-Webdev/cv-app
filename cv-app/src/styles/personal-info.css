@@ -26,7 +26,13 @@
   padding: 3em;
 }
 
-.resume-detail-containers {
+.resume-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(1em, 1fr));
+  gap: 1em;
+}
+
+.resume-items {
   display: grid;
   grid-template-columns: repeat(2, minmax(1em, 1fr));
 }

@@ -58,10 +58,14 @@ function ResumeEducation({ degree, institute, startDate, endDate, city }) {
         <h2>Education</h2>
       </div>
       <div className='education-details-container resume-detail-containers'>
-        <h3 className='resume-degree'>{degree}</h3>
-        <p className='resume-education-duration'>{`${startDate} - ${endDate}`}</p>
-        <h4 className='resume-institute'>{institute}</h4>
-        <p className='resume-education-city'>{city}</p>
+        <ul className='resume-education-list resume-list'>
+          <li className='resume-education-items resume-items'>
+            <h3 className='resume-degree'>{degree}</h3>
+            <p className='resume-education-duration'>{`${startDate} - ${endDate}`}</p>
+            <h4 className='resume-institute'>{institute}</h4>
+            <p className='resume-education-city'>{city}</p>
+          </li>
+        </ul>
       </div>
     </section>
   );
@@ -74,10 +78,14 @@ function ResumeExperience({ job, startDate, endDate, company, city }) {
         <h2>Experience</h2>
       </div>
       <div className='experience-details-container resume-detail-containers'>
-        <h3 className='resume-job'>{job}</h3>
-        <p className='resume-experience-duration'>{`${startDate} - ${endDate}`}</p>
-        <h4 className='resume-company'>{company}</h4>
-        <p className='resume-experience-city'>{city}</p>
+        <ul className='resume-experience-list resume-list'>
+          <li className='resume-experience-items resume-items'>
+            <h3 className='resume-job'>{job}</h3>
+            <p className='resume-experience-duration'>{`${startDate} - ${endDate}`}</p>
+            <h4 className='resume-company'>{company}</h4>
+            <p className='resume-experience-city'>{city}</p>
+          </li>
+        </ul>
       </div>
     </section>
   );

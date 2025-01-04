@@ -14,6 +14,10 @@ function UserInput({
   handleExample,
   handleEducationDelete,
   handleExperienceDelete,
+  handleEducationAdd,
+  handleExperienceAdd,
+  handleInputClear,
+  handleInputEdit,
 }) {
   return (
     <section className='user-input-container'>
@@ -28,6 +32,10 @@ function UserInput({
         handleExample={handleExample}
         handleEducationDelete={handleEducationDelete}
         handleExperienceDelete={handleExperienceDelete}
+        handleEducationAdd={handleEducationAdd}
+        handleExperienceAdd={handleExperienceAdd}
+        handleInputClear={handleInputClear}
+        handleInputEdit={handleInputEdit}
       ></UserInputContainer>
     </section>
   );
@@ -147,6 +155,84 @@ function PageContainer() {
       experienceLocation: '',
     });
   }
+  function handleEducationAdd(e) {
+    e.preventDefault();
+    const newEducation = {
+      school: educationInput.school,
+      degree: educationInput.degree,
+      educationStartDate: educationInput.educationStartDate,
+      educationEndDate: educationInput.educationEndDate,
+      educationLocation: educationInput.educationLocation,
+    };
+    setEducationInput(newEducation);
+    const educationList = document.querySelector('.resume-education-list');
+    const newEducationItem = document.createElement('li');
+    const newEducationDegree = document.createElement('h3');
+    const newEducationDuration = document.createElement('p');
+    const newEducationSchool = document.createElement('h4');
+    const newEducationLocation = document.createElement('p');
+    newEducationItem.classList.add('resume-education-items', 'resume-items');
+    newEducationDegree.textContent = educationInput.degree;
+    newEducationDuration.textContent = `${educationInput.educationStartDate} - ${educationInput.educationEndDate}`;
+    newEducationSchool.textContent = educationInput.school;
+    newEducationLocation.textContent = educationInput.educationLocation;
+    newEducationItem.appendChild(newEducationDegree);
+    newEducationItem.appendChild(newEducationDuration);
+    newEducationItem.appendChild(newEducationSchool);
+    newEducationItem.appendChild(newEducationLocation);
+    educationList.appendChild(newEducationItem);
+  }
+  function handleExperienceAdd(e) {
+    e.preventDefault();
+    const newExperience = {
+      company: experienceInput.company,
+      job: experienceInput.job,
+      experienceStartDate: experienceInput.experienceStartDate,
+      experienceEndDate: experienceInput.experienceEndDate,
+      experienceLocation: experienceInput.experienceLocation,
+    };
+    setExperienceInput(newExperience);
+  }
+  function handleInputClear(inputType) {
+    if (inputType === '.education-input') {
+      setEducationInput({
+        school: '',
+        degree: '',
+        educationStartDate: '',
+        educationEndDate: '',
+        educationLocation: '',
+      });
+    } else if (inputType === '.experience-input') {
+      setExperienceInput({
+        company: '',
+        job: '',
+        experienceStartDate: '',
+        experienceEndDate: '',
+        experienceLocation: '',
+      });
+    }
+  }
+
+  function handleInputEdit(inputType) {
+    if (inputType === '.education-input') {
+      setEducationInput({
+        school: educationInput.school,
+        degree: educationInput.degree,
+        educationStartDate: educationInput.educationStartDate,
+        educationEndDate: educationInput.educationEndDate,
+        educationLocation: educationInput.educationLocation,
+      });
+    } else if (inputType === '.experience-input') {
+      setExperienceInput({
+        company: experienceInput.company,
+        job: experienceInput.job,
+        experienceStartDate: experienceInput.experienceStartDate,
+        experienceEndDate: experienceInput.experienceEndDate,
+        experienceLocation: experienceInput.experienceLocation,
+      });
+    }
+  }
+
   return (
     <div className='page-container'>
       <UserInput
@@ -160,6 +246,10 @@ function PageContainer() {
         handleExample={handleExample}
         handleEducationDelete={handleEducationDelete}
         handleExperienceDelete={handleExperienceDelete}
+        handleEducationAdd={handleEducationAdd}
+        handleExperienceAdd={handleExperienceAdd}
+        handleInputClear={handleInputClear}
+        handleInputEdit={handleInputEdit}
       ></UserInput>
       <Resume
         personalInfoInput={personalInfoInput}
