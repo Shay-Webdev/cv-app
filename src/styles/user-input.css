@@ -108,3 +108,7 @@ div > form.input-forms-show {
   box-sizing: border-box;
   color: #ffffff;
 }
+
+.personal-input-form {
+  display: grid;
+}

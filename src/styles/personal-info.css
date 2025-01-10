@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 1em;
   min-height: 6rem;
+  text-align: center;
 
   background-color: #fd8d30;
   color: whitesmoke;
